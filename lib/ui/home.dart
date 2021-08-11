@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart' ;
 import 'package:arabyy/sizeConfig.dart';
 
@@ -6,75 +7,53 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return new Scaffold(
-
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.adb),title:Text("test")),
-        BottomNavigationBarItem(icon: Icon(Icons.call),title:Text("us")),
-        BottomNavigationBarItem(icon: Icon(Icons.map),title:Text("visit")),
-
-      ],),
-        appBar: new AppBar(
+        appBar: AppBar(
           backgroundColor: Colors.white,
-          centerTitle: true,
-          title: new Image.asset("images/mm.jpg",height:getProportionateScreenHeight(60.00) ,width:getProportionateScreenWidth(800.00) , ),
-          leading:new IconButton(
-              icon: new Icon(Icons.note),color: Colors.grey,
-              onPressed: ()=> debugPrint("Icon Pressed")),
+          title: Text("التصنيف", style: TextStyle(color: Colors.black),),
           elevation: 0,
           actions: [
-            new IconButton(
-                icon: new Icon(Icons.search),color:Colors.grey,
-                onPressed: () => debugPrint("Icon Pressed")),
+            IconButton(
+                icon: Icon(Icons.search, color: Colors.grey,),
+                onPressed: () => debugPrint("onpressed")
 
+            ),
           ],
-
-
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              new Container(
-                color: Colors.white,
-                child: new Column(
+            body: new Container(
+              color: Colors.white,
+              alignment: Alignment.center,
 
-                  children: [
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
                   Stack(
                     children: [
-                      Container(
-                        child: new Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            new Image.asset("images/mm.jpg",height:getProportionateScreenHeight(200.00) ,width:getProportionateScreenWidth(400.00)),
-                            new Text("test"),
-                            new Text("50.00"),
-                            new Text("instock"),
-
-                            new Image.asset("images/mm.jpg",height:getProportionateScreenHeight(200.00) ,width:getProportionateScreenWidth(400.00)),
-                            new Text("test"),
-                            new Text("50.00"),
-                            new Text("instock"),
-
-
-
-                          ],
-
-                        ),
-
-                      ),
-                      IconButton(
-                          icon: new Icon(Icons.favorite),color:Colors.grey,
-                          onPressed: () => debugPrint("Icon Pressed")),
+                      new Image.asset("images/mo.jpg",height:getProportionateScreenHeight(250.00) ,width:double.infinity),
+                       Center(child: new Text("العروض"),),
                     ],
+
                   ),
-                  ],
-                ),
+
+
+                ],
               ),
-            ],
-          ),
-        ));
+            ),
+        bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.adb),title:Text("test"),backgroundColor: Colors.red),
+    BottomNavigationBarItem(icon: Icon(Icons.call),title:Text("us")),
+    BottomNavigationBarItem(icon: Icon(Icons.map),title:Text("visit")),
+          BottomNavigationBarItem(icon: Icon(Icons.add),title:Text("+")),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite),title:Text("fav")),
+        ]
+    )
+    );
+
+
+
   }
 }
+
+
 
 
 
